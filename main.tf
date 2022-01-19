@@ -35,3 +35,19 @@ module "eks" {
   cluster_enabled_log_types = var.cluster_enabled_log_types
   source                  = "./modules/eks"
 }
+
+module "rds" {
+  default_tags           = var.default_tags
+  vpc_id                  = module.networking.vpc_id
+  private_subnet_id = module.networking.private_subnet_id
+  multi_az = var.multi_az
+  rds_storage = var.rds_storage
+  rds_version = var.rds_version
+  rds_instance_class = var.rds_instance_class
+  default_db = var.default_db
+  default_admin_user = var.default_admin_user
+  default_admin_password = var.default_admin_password
+  private_subnets_cidr = var.private_subnets_cidr
+  availability_zones     = var.availability_zones
+  source                  = "./modules/rds"
+}

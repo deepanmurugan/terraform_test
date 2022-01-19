@@ -88,3 +88,32 @@ variable "ng_desired_size" {
 variable "cluster_enabled_log_types" {
   default = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
 }
+
+#RDS Module vars
+variable "rds_storage" {
+  default = 50
+}
+
+variable "rds_version" {
+  default = "11.5"
+}
+
+variable "rds_instance_class" {
+  default = "db.m5.large"
+}
+
+variable "default_db" {
+  default = "prod"
+}
+
+variable "default_admin_user" {
+  default = "pr_admin"
+}
+
+variable "default_admin_password" {
+  default = "password"
+}
+
+variable "multi_az" {
+  default = true
+}
