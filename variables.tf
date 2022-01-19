@@ -117,3 +117,12 @@ variable "default_admin_password" {
 variable "multi_az" {
   default = true
 }
+
+#Elasticache variables
+variable "redis_node_type" {
+  default = "cache.m5.large"
+}
+
+variable "redis_engine_version" {
+  default = "5.0.6"
+}

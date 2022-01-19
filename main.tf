@@ -51,3 +51,13 @@ module "rds" {
   availability_zones     = var.availability_zones
   source                  = "./modules/rds"
 }
+
+module "elasticache" {
+  default_tags           = var.default_tags
+  private_subnet_id = module.networking.private_subnet_id
+  redis_node_type = var.redis_node_type
+  redis_engine_version = var.redis_engine_version
+  availability_zones = var.availability_zones
+  source                  = "./modules/elasticache"
+}
+

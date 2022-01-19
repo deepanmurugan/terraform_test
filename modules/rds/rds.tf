@@ -72,5 +72,4 @@ resource "aws_db_instance" "prod-read-replica" {
   instance_class       = var.rds_instance_class
   parameter_group_name = aws_db_parameter_group.prod_db_parameter_group.name
   skip_final_snapshot = true
-  backup_retention_period = 5
 }
